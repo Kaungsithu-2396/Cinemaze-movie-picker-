@@ -1,4 +1,5 @@
-import Nav from "./components/Nav";
+
+
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -15,10 +16,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className="bg-[#fdfff5] w-4/5 m-auto text-black "
+                className="bg-black text-white "
                 suppressHydrationWarning={true}
             >
-                <Nav />
+              
+
                 {children}
             </body>
         </html>
