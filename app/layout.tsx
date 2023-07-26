@@ -1,5 +1,4 @@
-
-
+import Nav from "./components/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -16,10 +15,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className="bg-black text-white "
+                className="bg-black text-white flex justify-between "
                 suppressHydrationWarning={true}
             >
-              
+                <Nav />
 
                 {children}
             </body>
