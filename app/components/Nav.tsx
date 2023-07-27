@@ -1,12 +1,18 @@
 import NavList from "./NavList";
-
+import { GoFilter } from "react-icons/go";
 export default function Nav() {
     return (
         <>
-            <nav className="  w-[20%] lg:bg-[#0D0D0D] bg-green-300  gap-5 ">
-                <h1 className="text-3xl  bg-black text-center cursor-pointer p-8">
-                    <span className="text-amber-400">Movie</span>Picker
-                </h1>
+            <nav className=" lg:w-[20%]  w-full lg:bg-[#0D0D0D] relative  gap-5 ">
+                <div className="text-3xl flex  justify-between   lg:relative absolute z-50 w-full bg-black bg-opacity-40  top-0 cursor-pointer p-8">
+                    <h1>
+                        {" "}
+                        <span className="text-amber-400">Movie</span>Picker
+                    </h1>
+                    <span className="md:hidden block">
+                        <GoFilter />
+                    </span>
+                </div>
 
                 <div className="mt-5 sticky top-8 hidden lg:block">
                     <h1 className="text-xl px-5">Discover</h1>
