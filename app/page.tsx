@@ -3,9 +3,10 @@ import HeroSection from "./components/HeroSection";
 import Search from "./components/Search";
 export default async function Home() {
     return (
-        <main className="flex-1">
+        <main className="lg:flex-1 w-screen">
             <Search />
             <HeroSection />
+            <div className="h-screen"></div>
         </main>
     );
 }

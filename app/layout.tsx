@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className="bg-black text-white flex justify-between "
+                className="bg-black text-white flex  justify-between flex-col lg:flex-row "
                 suppressHydrationWarning={true}
             >
                 <Nav />
