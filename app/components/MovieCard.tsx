@@ -16,7 +16,7 @@ export default function MovieCard({ src, title, overview, detail }: Props) {
                     src={`https://image.tmdb.org/t/p/original/${src}
                     `}
                     alt=""
-                    className=" rounded-lg object-cover w-full h-full  "
+                    className=" md:rounded-lg object-cover w-full h-full  "
                 />
                 <div className="absolute top-0 bg-black/60 h-full w-full "></div>
                 <div className="absolute xl:top-[50%] lg:top-[30%] top-[40%] lg:left-11 p-5">

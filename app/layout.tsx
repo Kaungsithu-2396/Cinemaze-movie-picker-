@@ -14,8 +14,12 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            {/* <link
+                href="https://api.fontshare.com/v2/css?f[]=excon@300&display=swap"
+                rel="stylesheet"
+            ></link> */}
             <body
-                className="bg-black text-white flex  justify-between flex-col lg:flex-row "
+                className="bg-black  text-white flex   justify-between  w-screen flex-col lg:flex-row "
                 suppressHydrationWarning={true}
             >
                 <Nav />
