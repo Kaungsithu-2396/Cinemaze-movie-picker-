@@ -1,5 +1,6 @@
 import HeroSection from "./components/HeroSection";
 import Search from "./components/Search";
+import UpComingMovies from "./components/UpComingMovies";
 export default async function Home() {
     return (
         <main className="lg:flex-1 w-full">
@@ -7,7 +8,9 @@ export default async function Home() {
                 <Search size={40} />
             </div>
             <HeroSection />
-            <div className="h-screen"></div>
+            <section>
+                <UpComingMovies />
+            </section>
         </main>
     );
 }
