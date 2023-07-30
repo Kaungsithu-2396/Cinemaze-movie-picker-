@@ -1,4 +1,4 @@
-import getPopularMovies from "@/lib/getPopularMovies";
+import getPopularMovies from "@/lib/getRelatedMovies";
 import PopularDataRender from "./PopularRender";
 
 export default async function HeroSection() {

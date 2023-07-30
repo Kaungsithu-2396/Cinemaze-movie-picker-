@@ -1,6 +1,6 @@
 import HeroSection from "./components/HeroSection";
 import Search from "./components/Search";
-import UpComingMovies from "./components/UpComingMovies";
+import UpComingMovieSection from "./components/UpComingMovieSection";
 export default async function Home() {
     return (
         <main className="lg:flex-1 w-full">
@@ -9,7 +9,7 @@ export default async function Home() {
             </div>
             <HeroSection />
             <section>
-                <UpComingMovies />
+                <UpComingMovieSection />
             </section>
         </main>
     );
