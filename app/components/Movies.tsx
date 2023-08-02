@@ -1,13 +1,16 @@
 "use client";
 type props = {
     movies: movies;
+    type: string;
 };
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-export default function Movies({ movies }: props) {
+export default function Movies({ movies, type }: props) {
+    const movieTypeName = type.split(" ");
     return (
-        <div className=" h-screen m-10">
+        <div className=" m-10">
             <h1 className="text-4xl my-10 text-amber-400 font-extrabold">
-                Upcoming <span className="text-white">movies</span>
+                {movieTypeName[0]}{" "}
+                <span className="text-white">{movieTypeName[1]}</span>
             </h1>
             <Splide
                 options={{
@@ -18,7 +21,7 @@ export default function Movies({ movies }: props) {
                     keyboard: "global",
                     type: "loop",
                     perPage: 3,
-                    autoplay: true,
+                    // autoplay: true,
                     pauseOnHover: true,
                     breakpoints: {
                         480: {
@@ -42,10 +45,10 @@ export default function Movies({ movies }: props) {
                         <SplideSlide key={movie.id}>
                             <div className="relative  cursor-pointer">
                                 <img
-                                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}
+                                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}
                                     `}
                                     alt=""
-                                    className="w-full h-[20rem] object-cover rounded-md"
+                                    className="w-full h-[20rem] object-cover rounded-md   "
                                 />
                                 <div
                                     className={`absolute hover:bg-black/60 bg-black/20 duration-200 delay-200 w-full h-full  top-0`}
@@ -54,6 +57,11 @@ export default function Movies({ movies }: props) {
                                         {movie.title}
                                         {movie.title !== movie.original_title &&
                                             "(" + movie.original_title + ")"}
+                                    </h1>
+                                </div>
+                                <div className="absolute left-0 top-0  rounded-md    bg-[#404040]">
+                                    <h1 className="text-amber-400 p-5 font-extrabold ">
+                                        {movie.vote_average}
                                     </h1>
                                 </div>
                             </div>

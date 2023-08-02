@@ -7,7 +7,7 @@ import MovieCard from "./MovieCard";
 import "@splidejs/react-splide/css";
 export default function PopularDataRender({ popularMovies }: props) {
     return (
-        <section className="lg:w-[94%] w-screen  m-auto   ">
+        <section className="lg:w-[95%]  w-screen  m-auto   ">
             <Splide
                 aria-label="My Favorite Images"
                 options={{
