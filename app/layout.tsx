@@ -23,7 +23,6 @@ export default function RootLayout({
                 suppressHydrationWarning={true}
             >
                 <Nav />
-
                 {children}
             </body>
         </html>

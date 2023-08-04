@@ -19,28 +19,11 @@ type movies = {
         }
     ];
 };
-type comingMovies = {
-    dates: {
-        maximum: String;
-        minimum: String;
-    };
-    page: number;
-    results: [
+type movieGenres = {
+    genres: [
         {
-            adult: Boolean;
-            backdrop_path: string;
-            genre_ids: Number[];
             id: Number;
-            original_language: String;
-            original_title: String;
-            overview: String;
-            popularity: number;
-            poster_path: String;
-            release_date: String;
-            title: String;
-            video: Boolean;
-            vote_average: number;
-            vote_count:number;
+            name: String;
         }
     ];
 };
