@@ -29,10 +29,10 @@ export default function NavSelection({ genres }: props) {
                     </span>
                 </div>
 
-                <div className="mt-5 sticky top-8 hidden lg:block">
+                <div className="mt-5  hidden lg:block">
                     <h1 className="text-2xl px-5">Discover</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
-                        <NavList title="Home" />
+                        <NavList title="Home" to="/" />
                         {/* <NavList title="Popular" />
                         <NavList title="Top Rated" /> */}
                     </ul>
@@ -44,6 +44,7 @@ export default function NavSelection({ genres }: props) {
                                 <NavList
                                     title={category.name}
                                     key={category.id}
+                                    to={`/genre/${category.id}`}
                                 />
                             );
                         })}

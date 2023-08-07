@@ -5,7 +5,8 @@ type props = {
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import MovieCard from "./MovieCard";
 import "@splidejs/react-splide/css";
-export default function PopularDataRender({ popularMovies }: props) {
+import getMovieTrailerKey from "@/lib/getMovieTrailerKey";
+export default async function PopularSection({ popularMovies }: props) {
     return (
         <section className="lg:w-[95%]  w-screen  m-auto   ">
             <Splide
@@ -21,6 +22,7 @@ export default function PopularDataRender({ popularMovies }: props) {
                     return (
                         <SplideSlide key={movie.id}>
                             <MovieCard
+                                id={movie.id}
                                 title={movie.original_title}
                                 src={movie.backdrop_path}
                                 overview={movie.overview}

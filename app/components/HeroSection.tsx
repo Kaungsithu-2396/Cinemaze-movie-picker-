@@ -1,8 +1,9 @@
 import getPopularMovies from "@/lib/getRelatedMovies";
-import PopularDataRender from "./PopularSection";
+import PopularSection from "./PopularSection";
 
 export default async function HeroSection() {
     const getMovies: Promise<movies> = getPopularMovies("popular");
     const movies = await getMovies;
-    return <PopularDataRender popularMovies={movies} />;
+
+    return <PopularSection popularMovies={movies} />;
 }

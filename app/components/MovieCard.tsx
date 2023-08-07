@@ -1,23 +1,34 @@
 import Link from "next/link";
-import React from "react";
+import getMovieTrailerKey from "@/lib/getMovieTrailerKey";
 
 type Props = {
+    id: number;
     src: string;
     title: string;
     overview: string;
     detail: string;
 };
 
-export default function MovieCard({ src, title, overview, detail }: Props) {
+export default async function MovieCard({
+    id,
+    src,
+    title,
+    overview,
+    detail,
+}: Props) {
+    const movies: Promise<movieTrailerKey> = getMovieTrailerKey(id.toString());
+    const data = await movies;
+
     return (
         <>
             <div className="relative h-screen 2xl:h-[50rem] xl:h-[30rem] lg:h-[25rem] ">
                 <img
                     src={`https://image.tmdb.org/t/p/original/${src}
                     `}
-                    alt=""
+                    alt={title}
                     className=" md:rounded-lg object-cover w-full h-full  "
                 />
+
                 <div className="absolute top-0 bg-black/60 h-full w-full "></div>
                 <div className="absolute xl:top-[50%] lg:top-[30%] top-[40%] lg:left-11 p-5">
                     <h1 className="2xl:text-4xl text-3xl 2xl:my-3 text-center md:text-left  font-extrabold ">
@@ -31,7 +42,9 @@ export default function MovieCard({ src, title, overview, detail }: Props) {
                             Detail
                         </button>
                     </Link>
-                    <Link href={detail}>
+                    <Link
+                        href={`https://www.youtube.com/watch?v=${data.results[0]?.key}`}
+                    >
                         <button className="bg-white hover:scale-110 duration-300 delay-200 text-black px-5 rounded-md py-2">
                             Watch Trailer
                         </button>
