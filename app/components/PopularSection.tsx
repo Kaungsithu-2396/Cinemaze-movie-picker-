@@ -4,6 +4,7 @@ type props = {
 };
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import MovieCard from "./MovieCard";
+
 import "@splidejs/react-splide/css";
 export default async function PopularSection({ popularMovies }: props) {
     return (
@@ -25,7 +26,7 @@ export default async function PopularSection({ popularMovies }: props) {
                                 title={movie.original_title}
                                 src={movie.backdrop_path}
                                 overview={movie.overview}
-                                detail={movie.id}
+                                detail={`detail/${movie.id}`}
                             />
                         </SplideSlide>
                     );
