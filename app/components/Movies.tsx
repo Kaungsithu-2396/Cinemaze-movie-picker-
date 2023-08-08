@@ -2,11 +2,12 @@
 type props = {
     movies: movies;
     type: string;
+    isCarousel: boolean;
 };
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import Link from "next/link";
-export default function Movies({ movies, type }: props) {
+export default function Movies({ movies, type, isCarousel }: props) {
     const movieTypeName = type.split(" ");
     return (
         <div className=" m-10">
@@ -33,6 +34,7 @@ export default function Movies({ movies, type }: props) {
                             // arrows: false,
                             // pagination: true,
                             perPage: 2,
+                            destroy: isCarousel,
                         },
                         768: {
                             arrows: false,
@@ -54,7 +56,7 @@ export default function Movies({ movies, type }: props) {
                                 />
                                 <Link href={`/detail/${movie.id}`}>
                                     <div
-                                        className={`absolute hover:bg-black/60 bg-black/20 duration-200 delay-200 w-full h-full  top-0`}
+                                        className={`absolute hover:bg-black/60 bg-black/20 duration-200 delay-200 w-full h-full cursor-pointer  top-0`}
                                     >
                                         <h1 className="text-center invisible lg:visible  px-4 h-full flex items-center justify-center text-xl opacity-0 font-extrabold text-amber-400 hover:opacity-100 duration-300 delay-300">
                                             {movie.title}

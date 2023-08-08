@@ -24,7 +24,7 @@ export default async function page({ params: { movieId } }: Props) {
     const key = movieData?.results[0]?.key;
 
     return (
-        <section className="flex-1 h-screen mt-7">
+        <section className="flex-1  ">
             <section>
                 <DetailSection keyOfMovie={key} detail={detail} />
             </section>

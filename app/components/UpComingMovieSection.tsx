@@ -3,5 +3,7 @@ import Movies from "./Movies";
 export default async function UpComingMovieSection() {
     const upcomingMovies: Promise<movies> = getRelatedMovies("upcoming");
     const movies = await upcomingMovies;
-    return <Movies movies={movies} type={"Upcoming Movies"} />;
+    return (
+        <Movies movies={movies} type={"Upcoming Movies"} isCarousel={false} />
+    );
 }
