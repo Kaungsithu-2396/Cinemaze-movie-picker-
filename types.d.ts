@@ -18,6 +18,8 @@ type movies = {
             vote_count: number;
         }
     ];
+    total_pages: number;
+    total_results: number;
 };
 type movieGenres = {
     genres: [

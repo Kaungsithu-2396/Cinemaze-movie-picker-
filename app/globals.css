@@ -9,6 +9,7 @@
     --background-end-rgb: 255, 255, 255;
 }
 html {
+    -webkit-text-size-adjust: none;
     font-family: "Poppins", sans-serif;
 
     /* font-family: "Excon", sans-serif; */

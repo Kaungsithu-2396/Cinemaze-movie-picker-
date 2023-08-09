@@ -16,6 +16,7 @@ export default async function page({
     const { genreID } = params;
     const movies: Promise<movies> = getMoviesAsGenre(genreID, Number(page));
     const relatedGenreMovies = await movies;
+    
 
     return (
         <>
@@ -24,7 +25,10 @@ export default async function page({
                     <Search size={60} />
                 </div>
                 <section className="m-5">
-                    <MoviesAsGenre relatedGenreMovies={relatedGenreMovies} genreID={genreID} />
+                    <MoviesAsGenre
+                        relatedGenreMovies={relatedGenreMovies}
+                        genreID={genreID}
+                    />
                 </section>
             </div>
         </>

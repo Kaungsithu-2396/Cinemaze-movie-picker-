@@ -15,9 +15,9 @@ export default function MovieCard({ src, name, to }: Props) {
                         <img
                             src={`https://image.tmdb.org/t/p/original/${src}`}
                             alt=""
-                            className="lg:h-[30rem] h-[15rem] w-full object-cover rounded-md "
+                            className="lg:h-[30rem] md:h-[20rem] h-[15rem] w-full object-cover rounded-md "
                         />
-                        <div className="absolute w-full h-full top-0 bg-black/40 z-40"></div>
+                        <div className="absolute w-full h-full top-0 bg-black/40 hover:bg-transparent duration-200 delay-300 z-40"></div>
                     </div>
                     <div className=" mt-4">
                         <h1 className=" text-2xl text-white/80">{name}</h1>

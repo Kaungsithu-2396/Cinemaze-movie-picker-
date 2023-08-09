@@ -9,16 +9,16 @@ import { useState } from "react";
 import { useSearchParams, usePathname } from "next/navigation";
 import MovieCard from "./MovieCard";
 export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
+    //access the genre and pageName via url to operate the dynamic page function
     const searchParams = useSearchParams();
     const genreName = searchParams.get("name");
     const pageNum = searchParams.get("page");
     const currentRoute = usePathname();
     const [currentPage, setCurrentPage] = useState(Number(pageNum));
-    // console.log(`${currentRoute}?name=${genreName}&page=${pageNum}`);
+
     function changeURLAsPage(page: number) {
         return `${currentRoute}?name=${genreName}&page=${currentPage + page}`;
     }
-    // const url = `${currentRoute}?name=${genreName}&page=${currentPage + 1}`;
 
     const pageIncHandler = () => {
         setCurrentPage(currentPage + 1);
@@ -26,6 +26,7 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
     const pageDecHandler = () => {
         currentPage > 0 && setCurrentPage(currentPage - 1);
     };
+
     return (
         <>
             <div className="">
@@ -51,12 +52,14 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                 {currentPage > 1 ? (
                     <Link href={changeURLAsPage(-1)}>
                         <button
-                            className={`border-2 font-extrabold border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105 text-2xl
+                            className={`border-2 font-extrabold border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105 md:text-2xl
                          `}
                             onClick={pageDecHandler}
                         >
                             page{" "}
-                            <span className="text-3xl">{currentPage - 1}</span>
+                            <span className="md:text-3xl">
+                                {currentPage - 1}
+                            </span>
                         </button>
                     </Link>
                 ) : (
@@ -64,7 +67,7 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                 )}
 
                 <div className="">
-                    <h1 className="text-2xl">
+                    <h1 className="md:text-2xl">
                         <span className="text-amber-400 text-4xl">
                             {currentPage}
                         </span>
@@ -73,10 +76,11 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                 </div>
                 <Link href={changeURLAsPage(1)}>
                     <button
-                        className="border-2 text-2xl border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105"
+                        className="border-2 md:text-2xl border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105"
                         onClick={pageIncHandler}
                     >
-                        page <span className="text-3xl">{currentPage + 1}</span>
+                        page{" "}
+                        <span className="md:text-3xl ">{currentPage + 1}</span>
                     </button>
                 </Link>
             </div>

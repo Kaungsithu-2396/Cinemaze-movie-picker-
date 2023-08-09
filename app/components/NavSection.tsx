@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function NavSelection({ genres }: props) {
     return (
         <>
-            <nav className=" xl:w-[20%] lg:w-[25%] md:w-[23%] h-screen overflow-y-scroll     w-full lg:bg-[#242526]  gap-5 ">
+            <nav className=" xl:w-[20%] lg:w-[25%] md:w-[23%] lg:h-screen overflow-y-scroll     w-full lg:bg-[#242526]  gap-5 ">
                 <div className="text-3xl flex  justify-between items-center gap-x-4 bg-[#242526]   lg:relative absolute z-50 w-full bg-opacity-40  top-0 cursor-pointer p-8">
                     <Link href="/">
                         <h1 className=" text-2xl text-amber-400 md:text-5xl">

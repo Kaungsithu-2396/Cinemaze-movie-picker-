@@ -21,12 +21,12 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
 
                 <div className="absolute   h-full lg:bg-black/60 bg-black/40  top-0 w-full  ">
                     <div className="flex md:justify-evenly justify-center  px-5    flex-col md:flex-row md:items-center h-full ">
-                        <div className="hidden md:block">
+                        <div className="hidden md:block h-[20rem]">
                             {detail.poster_path ? (
                                 <img
                                     src={`https://image.tmdb.org/t/p/original/${detail.poster_path}`}
                                     alt=""
-                                    className=" md:h-[30rem]  lg:h-[20rem] xl:h-[30rem] h-auto w-[50%] md:w-full m-auto object-cover rounded-lg"
+                                    className=" md:h-[30rem]  lg:h-[20rem] xl:h-[480px] xl:w-[20rem]   w-[30%] md:w-full m-auto object-cover rounded-lg"
                                 />
                             ) : (
                                 <h1 className="border-2 border-white px-6 py-52">
@@ -71,7 +71,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 <h4
                                     className={`text-white/80 mt-4  ${
                                         detail.overview.length > 200 && "h-36"
-                                    }   overflow-y-scroll lg:h-auto lg:w-auto`}
+                                    }   overflow-y-scroll `}
                                 >
                                     {detail.overview
                                         ? detail.overview
