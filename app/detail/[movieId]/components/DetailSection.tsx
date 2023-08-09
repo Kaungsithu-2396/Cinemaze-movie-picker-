@@ -20,8 +20,8 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                 )}
 
                 <div className="absolute   h-full lg:bg-black/60 bg-black/40  top-0 w-full  ">
-                    <div className="flex md:justify-evenly justify-center  px-5  flex-col lg:flex-row lg:items-center h-full ">
-                        <div className="lg:block hidden">
+                    <div className="flex md:justify-evenly justify-center  px-5   flex-col md:flex-row md:items-center h-full ">
+                        <div className="hidden md:block">
                             {detail.poster_path ? (
                                 <img
                                     src={`https://image.tmdb.org/t/p/original/${detail.poster_path}`}
@@ -34,8 +34,8 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 </h1>
                             )}
                         </div>
-                        <div className="w-[50%] flex flex-col md:gap-7  lg:gap-6 gap-2">
-                            <h1 className="lg:text-4xl text-2xl uppercase">
+                        <div className="md:w-[50%] w-full flex flex-col md:gap-5  lg:gap-6 gap-3">
+                            <h1 className="lg:text-4xl md:text-3xl text-2xl uppercase">
                                 {detail.original_title}
                             </h1>
                             <h1 className="lg:text-3xl text-red-700 text-2xl uppercase">
@@ -43,31 +43,43 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                             </h1>
 
                             <h2 className="lg:text-2xl text-xl text-amber-500">
-                                IMDB Voting {detail.vote_average.toFixed(2)}
+                                IMDB Voting {detail.vote_average.toFixed(1)}
                             </h2>
-                            <div className="hidden lg:block">
+                            <div className="">
                                 <h3 className="text-3xl">The Genres</h3>
-                                <div className="flex md:gap-6 gap-3 mt-4">
-                                    {detail.genres.map((el) => {
-                                        return (
-                                            <h3
-                                                key={el.id}
-                                                className=" px-2 py-3 lg:px-4 lg:py-2 border-2 border-white rounded-md md:bg-amber-400 text-white md:text-black font-bold"
-                                            >
-                                                {el.name}
-                                            </h3>
-                                        );
-                                    })}
+                                <div className="flex md:gap-6 flex-wrap gap-3 mt-4  ">
+                                    {detail.genres ? (
+                                        detail.genres.map((el) => {
+                                            return (
+                                                <h3
+                                                    key={el.id}
+                                                    className="  px-2 py-3 lg:px-4 lg:py-2 border-2 border-white rounded-md bg-amber-400  text-black font-bold"
+                                                >
+                                                    {el.name}
+                                                </h3>
+                                            );
+                                        })
+                                    ) : (
+                                        <h1 className="text-white">
+                                            No genre Shows
+                                        </h1>
+                                    )}
                                 </div>
                             </div>
-                            <div className="">
-                                <h4 className="text-3xl">Overview</h4>
-                                <h4 className="text-white/80 mt-4 w-[20rem] lg:w-auto">
-                                    {detail.overview}
+                            <div className=" mt-10">
+                                <h4 className="text-3xl ">Overview</h4>
+                                <h4
+                                    className={`text-white/80 mt-4  ${
+                                        detail.overview.length > 200 && "h-36"
+                                    }   overflow-y-scroll lg:h-auto lg:w-auto`}
+                                >
+                                    {detail.overview
+                                        ? detail.overview
+                                        : "No overview available"}
                                 </h4>
                             </div>
 
-                            <div className="flex gap-5">
+                            <div className="flex gap-5 ">
                                 {keyOfMovie ? (
                                     <Link
                                         href={`https://www.youtube.com/watch?v=${keyOfMovie}`}
@@ -80,7 +92,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                     </Link>
                                 ) : (
                                     <button className="px-10 py-2 border-2 border-neutral-200 hover:scale-105 bg-amber-500 text-black rounded-md duration-300 delay-200 ">
-                                        No Trailer Available
+                                        No Trailer
                                     </button>
                                 )}
                                 {!!detail.homepage ? (

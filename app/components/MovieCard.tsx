@@ -16,6 +16,7 @@ export default async function MovieCard({
     overview,
     detail,
 }: Props) {
+
     return (
         <>
             <div className="relative h-screen 2xl:h-[50rem] xl:h-[30rem] lg:h-[25rem] ">
@@ -27,15 +28,19 @@ export default async function MovieCard({
                 />
 
                 <div className="absolute top-0 bg-black/60 h-full w-full "></div>
-                <div className="absolute xl:top-[50%] lg:top-[30%] top-[40%] lg:left-11 p-5">
-                    <h1 className="2xl:text-4xl text-3xl 2xl:my-3 text-center md:text-left  font-extrabold ">
+                <div className="absolute xl:top-[50%] lg:top-[30%] top-[40%]  lg:left-11 p-5">
+                    <h1 className="2xl:text-4xl text-3xl 2xl:my-3 md:text-4xl text-center md:text-left  font-extrabold ">
                         {title}
                     </h1>
-                    <h2 className="xl:w-[60%] lg:w-[80%] my-4 font-bold text-white/70  xl:text-sm 2xl:text-xl">
+
+                    <h2 className="xl:w-[60%] lg:w-[80%] md:w-[60%] my-4 font-bold text-white/70 md:text-2xl  xl:text-sm 2xl:text-xl">
                         {overview.slice(0, 120)}....
                     </h2>
-                    <Link href={`${detail}`} className=" lg:mr-5 mr-2">
-                        <button className=" bg-amber-400 border-2  hover:scale-110 duration-300 delay-200 text-black px-10 rounded-md py-2">
+                    <Link
+                        href={`${detail}`}
+                        className=" lg:mr-5 mr-2 w-full lg:w-auto flex justify-center items-center lg:block"
+                    >
+                        <button className=" md:text-2xl bg-amber-400 border-2  hover:scale-110 duration-300 delay-200 text-black px-10 rounded-md py-2">
                             Detail
                         </button>
                     </Link>

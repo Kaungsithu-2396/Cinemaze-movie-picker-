@@ -10,8 +10,8 @@ import Link from "next/link";
 export default function NavSelection({ genres }: props) {
     return (
         <>
-            <nav className=" lg:w-[20%]    w-full lg:bg-[#0D0D0D] relative  gap-5 ">
-                <div className="text-3xl flex  justify-between items-center gap-x-4   lg:relative absolute z-50 w-full bg-black bg-opacity-40  top-0 cursor-pointer p-8">
+            <nav className=" lg:w-[20%]     w-full lg:bg-[#242526]  gap-5 ">
+                <div className="text-3xl flex  justify-between items-center gap-x-4 bg-[#242526]   lg:relative absolute z-50 w-full bg-opacity-40  top-0 cursor-pointer p-8">
                     <Link href="/">
                         <h1 className=" text-2xl text-amber-400 md:text-5xl">
                             <BiSolidCameraMovie />{" "}
@@ -20,6 +20,7 @@ export default function NavSelection({ genres }: props) {
                             </span>
                         </h1>
                     </Link>
+                    <hr />
 
                     <div className="block lg:hidden">
                         <Search size={20} />
@@ -29,12 +30,10 @@ export default function NavSelection({ genres }: props) {
                     </span>
                 </div>
 
-                <div className="mt-5  hidden lg:block">
+                <div className="mt-5  hidden lg:block ">
                     <h1 className="text-2xl px-5">Discover</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
                         <NavList title="Home" to="/" />
-                        {/* <NavList title="Popular" />
-                        <NavList title="Top Rated" /> */}
                     </ul>
 
                     <h1 className="text-2xl px-5">Categories</h1>
