@@ -8,11 +8,13 @@ import "@splidejs/react-splide/css";
 export default function SimilarMovies({ similarMovies }: Props) {
     return (
         <>
-            <Movies
-                movies={similarMovies}
-                type="Similar Movies"
-                isCarousel={true}
-            />
+            <div className="">
+                <Movies
+                    movies={similarMovies}
+                    type="Similar Movies"
+                    isCarousel={true}
+                />
+            </div>
         </>
     );
 }

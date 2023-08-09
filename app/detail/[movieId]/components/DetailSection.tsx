@@ -8,7 +8,7 @@ type Props = {
 export default function DetailSection({ keyOfMovie, detail }: Props) {
     return (
         <>
-            <div className="h-screen h relative">
+            <div className="h-screen  relative">
                 {detail.backdrop_path ? (
                     <img
                         src={`https://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
@@ -20,13 +20,13 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                 )}
 
                 <div className="absolute   h-full lg:bg-black/60 bg-black/40  top-0 w-full  ">
-                    <div className="flex md:justify-evenly justify-center  px-5   flex-col md:flex-row md:items-center h-full ">
+                    <div className="flex md:justify-evenly justify-center  px-5    flex-col md:flex-row md:items-center h-full ">
                         <div className="hidden md:block">
                             {detail.poster_path ? (
                                 <img
                                     src={`https://image.tmdb.org/t/p/original/${detail.poster_path}`}
                                     alt=""
-                                    className=" lg:h-[30rem] h-auto w-[50%] lg:w-full m-auto object-cover rounded-lg"
+                                    className=" md:h-[30rem]  lg:h-[20rem] xl:h-[30rem] h-auto w-[50%] md:w-full m-auto object-cover rounded-lg"
                                 />
                             ) : (
                                 <h1 className="border-2 border-white px-6 py-52">
@@ -34,7 +34,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 </h1>
                             )}
                         </div>
-                        <div className="md:w-[50%] w-full flex flex-col md:gap-5  lg:gap-6 gap-3">
+                        <div className=" w-full md:w-[40%] lg:w-[50%] xl:w-[30%] flex flex-col md:gap-5  lg:gap-6 gap-3">
                             <h1 className="lg:text-4xl md:text-3xl text-2xl uppercase">
                                 {detail.original_title}
                             </h1>
@@ -47,7 +47,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                             </h2>
                             <div className="">
                                 <h3 className="text-3xl">The Genres</h3>
-                                <div className="flex md:gap-6 flex-wrap gap-3 mt-4  ">
+                                <div className="flex  flex-wrap gap-3 mt-4  ">
                                     {detail.genres ? (
                                         detail.genres.map((el) => {
                                             return (

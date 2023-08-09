@@ -5,7 +5,7 @@ import TopRatedMovies from "./components/TopRatedMovies";
 import LatestMovies from "./components/LatestMovies";
 export default async function Home() {
     return (
-        <main className="lg:flex-1 w-full">
+        <main className="lg:flex-1 h-screen overflow-y-scroll w-full">
             <div className="hidden lg:block">
                 <Search size={40} />
             </div>
@@ -18,9 +18,9 @@ export default async function Home() {
             <section>
                 <TopRatedMovies />
             </section>
-          <section>
+            <section>
                 <LatestMovies />
-            </section>  
+            </section>
         </main>
     );
 }
