@@ -23,7 +23,7 @@ export default function NavSelection({ genres }: props) {
                     <hr />
 
                     <div className="block lg:hidden">
-                        <Search size={20} />
+                        <Search size={18} />
                     </div>
                     <span className="lg:hidden block">
                         <GoFilter className="md:text-4xl text-2xl" />

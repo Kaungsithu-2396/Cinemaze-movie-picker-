@@ -21,8 +21,8 @@ export default async function page({
     return (
         <>
             <div className="flex-1 h-screen overflow-y-scroll   absolute lg:relative top-20 md:top-24  lg:top-0">
-                <div className="hidden lg:block">
-                    <Search size={60} />
+                <div className="hidden lg:block ">
+                    <Search size={45} />
                 </div>
                 <section className="m-5">
                     <MoviesAsGenre

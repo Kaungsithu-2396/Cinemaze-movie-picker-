@@ -74,15 +74,21 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                         /500
                     </h1>
                 </div>
-                <Link href={changeURLAsPage(1)}>
-                    <button
-                        className="border-2 md:text-2xl border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105"
-                        onClick={pageIncHandler}
-                    >
-                        page{" "}
-                        <span className="md:text-3xl ">{currentPage + 1}</span>
-                    </button>
-                </Link>
+                {currentPage < 500 ? (
+                    <Link href={changeURLAsPage(1)}>
+                        <button
+                            className="border-2 md:text-2xl border-white px-5 py-2 rounded-md  hover:bg-amber-400 duration-300 delay-300 hover:text-black hover:scale-105"
+                            onClick={pageIncHandler}
+                        >
+                            page{" "}
+                            <span className="md:text-3xl ">
+                                {currentPage + 1}
+                            </span>
+                        </button>
+                    </Link>
+                ) : (
+                    <div></div>
+                )}
             </div>
         </>
     );

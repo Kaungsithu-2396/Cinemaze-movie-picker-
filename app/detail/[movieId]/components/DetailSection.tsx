@@ -71,7 +71,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 <h4
                                     className={`text-white/80 mt-4  ${
                                         detail.overview.length > 200 && "h-36"
-                                    }   overflow-y-scroll `}
+                                    }   overflow-y-scroll`}
                                 >
                                     {detail.overview
                                         ? detail.overview
