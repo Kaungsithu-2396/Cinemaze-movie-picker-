@@ -1,13 +1,18 @@
+"use client";
 type props = {
     genres: movieGenres;
 };
+import { RxCross1 } from "react-icons/rx";
 import React from "react";
 import NavList from "./NavList";
 import { GoFilter } from "react-icons/go";
 import { BiSolidCameraMovie } from "react-icons/bi";
 import Search from "./Search";
+import { useState } from "react";
 import Link from "next/link";
 export default function NavSection({ genres }: props) {
+    const [openSideBar, setOpenSideBar] = useState(false);
+
     return (
         <>
             <nav className=" xl:w-[20%] lg:w-[25%] md:w-[23%] lg:h-screen overflow-y-scroll     w-full lg:bg-[#242526]  gap-5 ">
@@ -25,11 +30,15 @@ export default function NavSection({ genres }: props) {
                     <div className="block lg:hidden">
                         <Search size={18} />
                     </div>
-                    <span className="lg:hidden block">
+                    <span
+                        className="lg:hidden block"
+                        onClick={() => setOpenSideBar(!openSideBar)}
+                    >
                         <GoFilter className="md:text-4xl text-2xl" />
                     </span>
                 </div>
 
+                {/* <div className="mt-5  hidden lg:block "> */}
                 <div className="mt-5  hidden lg:block ">
                     <h1 className="text-2xl px-5">Discover</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
@@ -38,18 +47,44 @@ export default function NavSection({ genres }: props) {
 
                     <h1 className="text-2xl px-5">Categories</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
-                        {genres &&
-                            genres.genres.map((category) => {
-                                return (
-                                    <NavList
-                                        title={category.name}
-                                        key={category.id}
-                                        to={`/genre/${category.id}?name=${category.name}&page=1`}
-                                    />
-                                );
-                            })}
+                        {genres.genres.map((category) => {
+                            return (
+                                <NavList
+                                    title={category.name}
+                                    key={category.id}
+                                    to={`/genre/${category.id}?name=${category.name}&page=1`}
+                                />
+                            );
+                        })}
                     </ul>
                 </div>
+                {/* phone view */}
+                {openSideBar && (
+                    <div className=" p-5 flex justify-between fixed top-0 md:w-[70%] w-full h-screen  z-50 bg-black  ">
+                        <div className="md:w-[70%] w-[100%]">
+                            <h1 className="text-xl px-5">Discover</h1>
+                            <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
+                                <NavList title="Home" to="/" />
+                            </ul>
+
+                            <h1 className="text-2xl px-5">Categories</h1>
+                            <ul className=" grid gap-5 grid-cols-3 cursor-pointer w-full py-2 px-5 overflow-scroll  text-lg  ">
+                                {genres.genres.map((category) => {
+                                    return (
+                                        <NavList
+                                            title={category.name}
+                                            key={category.id}
+                                            to={`/genre/${category.id}?name=${category.name}&page=1`}
+                                        />
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                        <div className="" onClick={() => setOpenSideBar(false)}>
+                            <RxCross1 />
+                        </div>
+                    </div>
+                )}
             </nav>
         </>
     );

@@ -35,7 +35,7 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                     <span className="text-2xl text-white/60">movies</span>
                 </h1>
             </div>
-            <div className="grid xl:grid-cols-4 lg:grid-cols-3  grid-cols-2 gap-10 px-5 mt-5">
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3   grid-cols-2 gap-10 lg:px-5 md:px-10 mt-5">
                 {relatedGenreMovies.results.map((el) => {
                     return (
                         <React.Fragment key={el.id}>

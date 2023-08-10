@@ -24,8 +24,8 @@ export default async function page({ params: { movieId } }: Props) {
     const key = movieData?.results[0]?.key;
 
     return (
-        <section className="flex-1  h-screen  overflow-y-scroll  ">
-            <section>
+        <section className="flex-1  h-screen   overflow-y-scroll  ">
+            <section className="">
                 <DetailSection keyOfMovie={key} detail={detail} />
             </section>
             <section>
