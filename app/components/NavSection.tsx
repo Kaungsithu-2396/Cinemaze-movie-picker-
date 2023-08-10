@@ -28,7 +28,7 @@ export default function NavSection({ genres }: props) {
                     <hr />
 
                     <div className="block lg:hidden">
-                        <Search size={18} />
+                        <Search size={10} />
                     </div>
                     <span
                         className="lg:hidden block"

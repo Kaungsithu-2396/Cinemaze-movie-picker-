@@ -8,7 +8,7 @@ type Props = {
 export default function DetailSection({ keyOfMovie, detail }: Props) {
     return (
         <>
-            <div className="  relative">
+            <div className="h-screen  relative">
                 {detail.backdrop_path ? (
                     <img
                         src={`https://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
