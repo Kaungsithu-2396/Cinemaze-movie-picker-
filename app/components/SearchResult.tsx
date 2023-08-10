@@ -10,7 +10,7 @@ type Props = {
 export default function SearchResult({ src, movieName, time, to }: Props) {
     return (
         <>
-            <Link href={`detail/${to}`}>
+            <Link href={`/detail/${to}`}>
                 <div className="grid grid-cols-2 p-5">
                     <img
                         src={`https://image.tmdb.org/t/p/original${src}`}

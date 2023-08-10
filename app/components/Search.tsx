@@ -20,7 +20,7 @@ export default function Search({ size }: props) {
             .then((response) => response.json())
             .then((data) => setData(data));
     }, [searchText]);
-    console.log(data && data);
+
     return (
         <>
             <div className=" relative lg:m-5 flex flex-col w-min ">
@@ -38,7 +38,7 @@ export default function Search({ size }: props) {
                     <div
                         className={` bg-white absolute text-black h-80 overflow-y-scroll top-20 z-50`}
                     >
-                        {  data && 
+                        {data &&
                             data.results.map((el) => {
                                 return (
                                     <SearchResult

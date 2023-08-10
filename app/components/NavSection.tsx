@@ -7,7 +7,7 @@ import { GoFilter } from "react-icons/go";
 import { BiSolidCameraMovie } from "react-icons/bi";
 import Search from "./Search";
 import Link from "next/link";
-export default function NavSelection({ genres }: props) {
+export default function NavSection({ genres }: props) {
     return (
         <>
             <nav className=" xl:w-[20%] lg:w-[25%] md:w-[23%] lg:h-screen overflow-y-scroll     w-full lg:bg-[#242526]  gap-5 ">
@@ -38,15 +38,16 @@ export default function NavSelection({ genres }: props) {
 
                     <h1 className="text-2xl px-5">Categories</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
-                        {genres.genres.map((category) => {
-                            return (
-                                <NavList
-                                    title={category.name}
-                                    key={category.id}
-                                    to={`/genre/${category.id}?name=${category.name}&page=1`}
-                                />
-                            );
-                        })}
+                        {genres &&
+                            genres.genres.map((category) => {
+                                return (
+                                    <NavList
+                                        title={category.name}
+                                        key={category.id}
+                                        to={`/genre/${category.id}?name=${category.name}&page=1`}
+                                    />
+                                );
+                            })}
                     </ul>
                 </div>
             </nav>
