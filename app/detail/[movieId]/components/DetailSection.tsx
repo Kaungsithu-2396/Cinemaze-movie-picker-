@@ -47,7 +47,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                             </h2>
                             <div className="">
                                 <h3 className="text-3xl">The Genres</h3>
-                                <div className="flex  flex-wrap gap-3 mt-4  ">
+                                <div className="flex  flex-wrap gap-2 mt-4  ">
                                     {detail.genres ? (
                                         detail.genres.map((el) => {
                                             return (
@@ -66,11 +66,12 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                     )}
                                 </div>
                             </div>
-                            <div className=" mt-10">
+                            <div className=" mt-5 md:mt-10">
                                 <h4 className="text-3xl ">Overview</h4>
                                 <h4
                                     className={`text-white/80 mt-4  ${
-                                        detail.overview.length > 200 && "h-36"
+                                        detail.overview.length > 200 &&
+                                        "h-[144px]"
                                     }   overflow-y-scroll`}
                                 >
                                     {detail.overview
