@@ -23,15 +23,14 @@ export default function Search({ size }: props) {
 
     return (
         <>
-            <div className=" relative lg:m-5 flex flex-col w-min ">
+            <div className=" relative lg:m-5 flex flex-col ">
                 <input
                     type="text"
                     name=""
                     placeholder="&#128269; Titanic.."
                     autoFocus
-                    className="   lg:px-5 lg:py-3 px-5 py-2 md:px-14 md:py-3  bg-[#242526] outline-none  text-white text-xl lg:border-2 rounded-md border-black "
+                    className=" lg:w-[50%] w-full   lg:px-10 lg:py-3 px-5 py-2 md:px-14 md:py-3  bg-[#242526] outline-none  text-white text-xl lg:border-2 rounded-md border-black "
                     id=""
-                    size={size}
                     onChange={onChangeHandler}
                 />
                 {searchText ? (

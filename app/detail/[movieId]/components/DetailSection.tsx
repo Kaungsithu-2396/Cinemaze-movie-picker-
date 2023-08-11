@@ -8,7 +8,7 @@ type Props = {
 export default function DetailSection({ keyOfMovie, detail }: Props) {
     return (
         <>
-            <div className="h-screen  relative">
+            <div className="lg:h-screen h-[62rem]  relative">
                 {detail.backdrop_path ? (
                     <img
                         src={`https://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
@@ -34,26 +34,26 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 </h1>
                             )}
                         </div>
-                        <div className=" w-full md:w-[40%] lg:w-[50%] xl:w-[30%] flex flex-col md:gap-5  lg:gap-6 gap-3">
-                            <h1 className="lg:text-4xl md:text-3xl text-2xl uppercase">
+                        <div className=" relative top-10 md:w-[40%] lg:w-[50%] xl:w-[30%] flex flex-col md:gap-5  lg:gap-6 gap-3">
+                            <h1 className="lg:text-4xl md:text-3xl text-xl uppercase">
                                 {detail.original_title}
                             </h1>
                             <h1 className="lg:text-3xl text-red-700 text-2xl uppercase">
                                 {detail.adult && "18+"}
                             </h1>
 
-                            <h2 className="lg:text-2xl text-xl text-amber-500">
+                            <h2 className="lg:text-2xl text-lg text-amber-500">
                                 IMDB Voting {detail.vote_average.toFixed(1)}
                             </h2>
                             <div className="">
-                                <h3 className="text-3xl">The Genres</h3>
-                                <div className="flex  flex-wrap gap-2 mt-4  ">
+                                <h3 className="text-2xl">The Genres</h3>
+                                <div className="flex  lg:flex-wrap flex-nowrap gap-2 mt-4  ">
                                     {detail.genres ? (
                                         detail.genres.map((el) => {
                                             return (
                                                 <h3
                                                     key={el.id}
-                                                    className="  px-2 py-3 lg:px-4 lg:py-2 border-2 border-white rounded-md bg-amber-400  text-black font-bold"
+                                                    className="  p-2 lg:px-4 lg:py-2 border-2 border-white rounded-md bg-amber-400  text-black font-bold"
                                                 >
                                                     {el.name}
                                                 </h3>
