@@ -2,8 +2,7 @@ import DetailSection from "./components/DetailSection";
 import getMovieTrailerKey from "@/lib/getMovieTrailerKey";
 import getDetails from "@/lib/getDetails";
 import getSimilarMovies from "@/lib/getSimilarMovies";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import Movies from "@/app/components/Movies";
+import { Metadata } from "next";
 import SimilarMovies from "./components/SimilarMovies";
 
 type Props = {
@@ -11,6 +10,15 @@ type Props = {
         movieId: string;
     };
 };
+
+export async function generateMetadata({ params: { movieId } }: Props) {
+    const movieDetail: Promise<movieDetail> = getDetails(movieId);
+    const detail = await movieDetail;
+    return {
+        title: detail.original_title,
+        description: `page of ${detail.original_title}`,
+    };
+}
 
 export default async function page({ params: { movieId } }: Props) {
     const movie: Promise<movieTrailerKey> = getMovieTrailerKey(movieId);
