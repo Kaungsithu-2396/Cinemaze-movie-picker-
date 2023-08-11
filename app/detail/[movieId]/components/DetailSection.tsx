@@ -8,7 +8,7 @@ type Props = {
 export default function DetailSection({ keyOfMovie, detail }: Props) {
     return (
         <>
-            <div className="lg:h-screen h-[62rem]  relative">
+            <div className="lg:h-screen h-[60rem]  relative">
                 {detail.backdrop_path ? (
                     <img
                         src={`https://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
@@ -47,7 +47,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                             </h2>
                             <div className="">
                                 <h3 className="text-2xl">The Genres</h3>
-                                <div className="flex  lg:flex-wrap flex-nowrap gap-2 mt-4  ">
+                                <div className="flex  flex-wrap gap-2 mt-4  ">
                                     {detail.genres ? (
                                         detail.genres.map((el) => {
                                             return (
