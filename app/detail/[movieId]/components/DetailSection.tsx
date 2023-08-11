@@ -26,7 +26,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 <img
                                     src={`https://image.tmdb.org/t/p/original/${detail.poster_path}`}
                                     alt=""
-                                    className=" md:h-[30rem]  lg:h-[20rem] xl:h-[480px] xl:w-[20rem]   w-[30%] md:w-full m-auto object-cover rounded-lg"
+                                    className=" md:h-[23rem]  lg:h-[20rem] xl:h-[480px] xl:w-[20rem]   w-[30%] md:w-full  object-cover rounded-lg"
                                 />
                             ) : (
                                 <h1 className="border-2 border-white px-6 py-52">
@@ -34,7 +34,7 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                 </h1>
                             )}
                         </div>
-                        <div className=" relative top-10 md:w-[40%] lg:w-[50%] xl:w-[30%] flex flex-col md:gap-5  lg:gap-6 gap-3">
+                        <div className=" relative top-10 lg:top-6 md:w-[40%] lg:w-[50%] xl:w-[36%] flex flex-col md:gap-5  lg:gap-3 gap-3">
                             <h1 className="lg:text-4xl md:text-3xl text-xl uppercase">
                                 {detail.original_title}
                             </h1>
@@ -66,12 +66,12 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                                     )}
                                 </div>
                             </div>
-                            <div className=" mt-5 md:mt-10">
+                            <div className=" mt-5 md:mt-10 lg:mt-2">
                                 <h4 className="text-3xl ">Overview</h4>
                                 <h4
                                     className={`text-white/80 mt-4  ${
-                                        detail.overview.length > 200 &&
-                                        "h-[144px]"
+                                        detail.overview.length > 100 &&
+                                        "h-[100px]"
                                     }   overflow-y-scroll`}
                                 >
                                     {detail.overview

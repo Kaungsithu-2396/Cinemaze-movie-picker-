@@ -40,9 +40,14 @@ export default function NavSection({ genres }: props) {
 
                 {/* <div className="mt-5  hidden lg:block "> */}
                 <div className="mt-5  hidden lg:block ">
-                    <h1 className="text-2xl px-5">Discover</h1>
+                    <h1 className="text-2xl t px-5">Discover</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
-                        <NavList title="Home" to="/" />
+                        <NavList
+                            title="Home"
+                            to="/"
+                            space="p-5"
+                            fontSize="lg"
+                        />
                     </ul>
 
                     <h1 className="text-2xl px-5">Categories</h1>
@@ -53,6 +58,8 @@ export default function NavSection({ genres }: props) {
                                     title={category.name}
                                     key={category.id}
                                     to={`/genre/${category.id}?name=${category.name}&page=1`}
+                                    space="p-5"
+                                    fontSize="lg"
                                 />
                             );
                         })}
@@ -60,11 +67,18 @@ export default function NavSection({ genres }: props) {
                 </div>
                 {/* phone view */}
                 {openSideBar && (
-                    <div className=" p-5 flex justify-between fixed top-0 md:w-[70%] w-full h-screen  z-50 bg-black  ">
+                    <div
+                        className={` p-5 flex justify-between fixed top-0 md:w-[70%] w-full h-screen  z-50 bg-black    `}
+                    >
                         <div className="md:w-[70%] w-[100%]">
                             <h1 className="text-xl px-5">Discover</h1>
                             <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
-                                <NavList title="Home" to="/" />
+                                <NavList
+                                    title="Home"
+                                    to="/"
+                                    space="px-2 py-4"
+                                    fontSize="base"
+                                />
                             </ul>
 
                             <h1 className="text-2xl px-5">Categories</h1>
@@ -75,6 +89,8 @@ export default function NavSection({ genres }: props) {
                                             title={category.name}
                                             key={category.id}
                                             to={`/genre/${category.id}?name=${category.name}&page=1`}
+                                            space="px-2 py-4"
+                                            fontSize="base"
                                         />
                                     );
                                 })}

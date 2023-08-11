@@ -43,6 +43,7 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                                 src={el.poster_path}
                                 name={el.original_title}
                                 to={`/detail/${el.id}`}
+                                imdbVote={el.vote_average}
                             />
                         </React.Fragment>
                     );
