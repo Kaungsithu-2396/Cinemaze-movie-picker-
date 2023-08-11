@@ -41,6 +41,7 @@ export default function Search({ size }: props) {
                             data.results.map((el) => {
                                 return (
                                     <SearchResult
+                                        key={el.id}
                                         src={el.poster_path}
                                         time={el.release_date}
                                         movieName={el.original_title}
