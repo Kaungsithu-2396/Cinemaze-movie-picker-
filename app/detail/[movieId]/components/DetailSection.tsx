@@ -43,12 +43,15 @@ export default function DetailSection({ keyOfMovie, detail }: Props) {
                             </h1>
 
                             <h2 className="lg:text-2xl text-lg text-amber-500">
-                                IMDB Voting {detail.vote_average.toFixed(1)}
+                                {detail.vote_average &&
+                                    `IMDB Voting ${detail.vote_average.toFixed(
+                                        1
+                                    )}`}
                             </h2>
                             <div className="">
                                 <h3 className="text-2xl">The Genres</h3>
                                 <div className="flex  flex-wrap gap-2 mt-4  ">
-                                    {detail.genres ? (
+                                    {detail.genres.length ? (
                                         detail.genres.map((el) => {
                                             return (
                                                 <h3

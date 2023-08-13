@@ -71,7 +71,9 @@ export default function Movies({ movies, type, isCarousel }: props) {
 
                                 <div className="absolute left-0 top-0  rounded-md    bg-[#404040]">
                                     <h1 className="text-amber-400 p-5 font-extrabold ">
-                                        {movie.vote_average.toFixed(1)}
+                                        {movie.vote_average
+                                            ? movie.vote_average.toFixed(1)
+                                            : "not stated"}
                                     </h1>
                                 </div>
                             </div>

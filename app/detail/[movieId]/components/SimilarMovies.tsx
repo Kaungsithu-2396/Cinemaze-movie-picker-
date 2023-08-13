@@ -6,7 +6,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 export default function SimilarMovies({ similarMovies }: Props) {
-    console.log(similarMovies);
     return (
         <>
             {similarMovies.results.length ? (

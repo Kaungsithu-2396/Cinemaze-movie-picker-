@@ -9,9 +9,13 @@ import { GoFilter } from "react-icons/go";
 import { BiSolidCameraMovie } from "react-icons/bi";
 import Search from "./Search";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import path from "path";
 export default function NavSection({ genres }: props) {
     const [openSideBar, setOpenSideBar] = useState(false);
+    const pathName = usePathname();
+    console.log(pathName);
 
     return (
         <>
@@ -47,12 +51,16 @@ export default function NavSection({ genres }: props) {
                             to="/"
                             space="p-5"
                             fontSize="lg"
+                            isActive={pathName == "/"}
                         />
                     </ul>
 
                     <h1 className="text-2xl px-5">Categories</h1>
                     <ul className="  flex flex-col cursor-pointer w-full py-2 px-5  text-lg  ">
                         {genres.genres.map((category) => {
+                            const isActive =
+                                pathName == `/genre/${category.id}`;
+
                             return (
                                 <NavList
                                     title={category.name}
@@ -60,6 +68,7 @@ export default function NavSection({ genres }: props) {
                                     to={`/genre/${category.id}?name=${category.name}&page=1`}
                                     space="p-5"
                                     fontSize="lg"
+                                    isActive={isActive}
                                 />
                             );
                         })}
@@ -78,12 +87,15 @@ export default function NavSection({ genres }: props) {
                                     to="/"
                                     space="px-2 py-4"
                                     fontSize="base"
+                                    isActive={pathName == "/"}
                                 />
                             </ul>
 
                             <h1 className="text-2xl px-5">Categories</h1>
                             <ul className=" grid gap-5 grid-cols-3 cursor-pointer w-full py-2 px-5 overflow-scroll  text-lg  ">
                                 {genres.genres.map((category) => {
+                                    const isActive =
+                                        pathName == `/genre/${category.id}`;
                                     return (
                                         <NavList
                                             title={category.name}
@@ -91,6 +103,7 @@ export default function NavSection({ genres }: props) {
                                             to={`/genre/${category.id}?name=${category.name}&page=1`}
                                             space="px-2 py-4"
                                             fontSize="base"
+                                            isActive={isActive}
                                         />
                                     );
                                 })}
