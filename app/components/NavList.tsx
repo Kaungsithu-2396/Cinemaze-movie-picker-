@@ -19,7 +19,7 @@ export default function NavList({
                 {/* <h1 className="hover:text-amber-400 p-5 text-xs md:border-2 lg:border-0 rounded-lg   duration-200 delay-200 hover:scale-105 hover:bg-black  md:border-white w-full text-white/60 lg:rounded-md"> */}
                 <h1
                     className={`hover:text-amber-400 ${space} text-${fontSize}   lg:border-0 rounded-lg   duration-200 delay-200 hover:scale-105 hover:bg-black   w-full text-white/60 lg:rounded-md ${
-                        isActive ? " text-slate-950  bg-amber-400" : ""
+                        isActive ? " text-gray-950  bg-amber-400" : ""
                     }`}
                 >
                     {title}
