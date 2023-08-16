@@ -16,6 +16,7 @@ export async function generateMetadata({
 }) {
     const genre: Promise<movieGenres> = getMoviesGenre();
     const movieGenres = await genre;
+    
     const userSelectGenre = movieGenres.genres.filter(
         (el) => el.id == params.genreID
     );
@@ -47,7 +48,7 @@ export default async function page({
                 <div className="hidden lg:block ">
                     <Search size={45} />
                 </div>
-                <section className="m-5">
+                <section className=" mt-8 mx-5">
                     <MoviesAsGenre
                         relatedGenreMovies={relatedGenreMovies}
                         genreID={genreID}

@@ -86,7 +86,7 @@ export default function NavSection({ genres }: props) {
                                     title="Home"
                                     to="/"
                                     space="px-2 py-4"
-                                    fontSize="base"
+                                    fontSize="sm"
                                     isActive={pathName == "/"}
                                 />
                             </ul>
@@ -102,7 +102,7 @@ export default function NavSection({ genres }: props) {
                                             key={category.id}
                                             to={`/genre/${category.id}?name=${category.name}&page=1`}
                                             space="px-2 py-4"
-                                            fontSize="base"
+                                            fontSize="sm"
                                             isActive={isActive}
                                         />
                                     );
