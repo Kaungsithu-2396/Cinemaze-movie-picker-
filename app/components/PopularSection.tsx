@@ -12,11 +12,10 @@ export default async function PopularSection({ popularMovies }: props) {
             <Splide
                 aria-label="My Favorite Images"
                 options={{
-                    // autoplay: true,
+                    autoplay: true,
                     interval: 2000,
                     type: "loop",
                     arrows: false,
-                    pauseOnHover: true,
                 }}
             >
                 {popularMovies.results.map((movie) => {

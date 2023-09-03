@@ -2,7 +2,6 @@ import Search from "@/app/components/Search";
 import MoviesAsGenre from "./components/MoviesAsGenre";
 import getMoviesAsGenre from "@/lib/getMoviesAsGenre";
 import getMoviesGenre from "@/lib/getMoviesGenre";
-import { Metadata } from "next";
 
 export async function generateMetadata({
     params,
@@ -16,7 +15,7 @@ export async function generateMetadata({
 }) {
     const genre: Promise<movieGenres> = getMoviesGenre();
     const movieGenres = await genre;
-    
+
     const userSelectGenre = movieGenres.genres.filter(
         (el) => el.id == params.genreID
     );
