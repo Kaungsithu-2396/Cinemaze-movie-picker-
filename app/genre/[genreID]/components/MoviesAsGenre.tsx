@@ -67,14 +67,14 @@ export default function MoviesAsGenre({ relatedGenreMovies, genreID }: Props) {
                     <div className=""></div>
                 )}
 
-                <div className="">
+                {/* <div className="">
                     <h1 className="md:text-2xl">
                         <span className="text-amber-400 text-4xl">
                             {currentPage}
                         </span>
                         /500
                     </h1>
-                </div>
+                </div> */}
                 {currentPage < 500 ? (
                     <Link href={changeURLAsPage(1)}>
                         <button
