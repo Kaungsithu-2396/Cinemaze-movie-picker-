@@ -9,9 +9,11 @@ import SearchResult from "./SearchResult";
 export default function Search({ size }: props) {
     const [searchText, setsearchText] = useState("");
     const [data, setData] = useState<movies>();
+    const [hide, setHide] = useState<Boolean>(false);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setsearchText(e.target.value);
+        setHide(false);
     };
     const url = `https://api.themoviedb.org/3/search/movie?query=${searchText}&api_key=418a76a85ac7586cda9a8a2a593d5487`;
 
@@ -23,7 +25,10 @@ export default function Search({ size }: props) {
 
     return (
         <>
-            <div className=" relative lg:m-5 flex flex-col ">
+            <div
+                className=" relative lg:m-5 flex flex-col "
+                onBlur={() => setHide(true)}
+            >
                 <input
                     type="text"
                     name=""
@@ -37,7 +42,8 @@ export default function Search({ size }: props) {
                     <div
                         className={` bg-white absolute text-black h-80 overflow-y-scroll top-20 z-50`}
                     >
-                        {data &&
+                        {!hide &&
+                            data &&
                             data.results.map((el) => {
                                 return (
                                     <SearchResult
