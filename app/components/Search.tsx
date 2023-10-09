@@ -25,10 +25,7 @@ export default function Search({ size }: props) {
 
     return (
         <>
-            <div
-                className=" relative lg:m-5 flex flex-col "
-                onBlur={() => setHide(true)}
-            >
+            <div className=" relative lg:m-5 flex flex-col ">
                 <input
                     type="text"
                     name=""
@@ -41,6 +38,7 @@ export default function Search({ size }: props) {
                 {searchText ? (
                     <div
                         className={` bg-white absolute text-black h-80 overflow-y-scroll top-20 z-50`}
+                        // onBlur={() => setHide(true)}
                     >
                         {!hide &&
                             data &&
